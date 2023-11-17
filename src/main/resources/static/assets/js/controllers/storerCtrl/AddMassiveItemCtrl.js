@@ -111,6 +111,11 @@ app.controller("massiveAddProductCtrl", ["$scope", "$http", function($scope, $ht
 	};
 
 	$scope.cleanDatatable = function() {
+
+		if (isNullOrUndefined(tableProduct)) {
+			return;
+		}
+
 		Swal.fire({
 			title: TITLES.SUCCESSFULLY,
 			text: MSJ.QUESTION_ARE_SURE_DELETE_TABLE,
@@ -118,6 +123,7 @@ app.controller("massiveAddProductCtrl", ["$scope", "$http", function($scope, $ht
 			showCancelButton: true,
 			confirmButtonText: MSJ.CONTINUE,
 			cancelButtonText: MSJ.CANCEL,
+			reverseButtons: true
 		}).then(function(result) {
 			if (result.value) {
 				cleanDatatableActions()
@@ -126,6 +132,11 @@ app.controller("massiveAddProductCtrl", ["$scope", "$http", function($scope, $ht
 	};
 
 	$scope.getData = function() {
+
+		if (isNullOrUndefined(tableProduct)) {
+			return;
+		}
+
 		let itemData = tableProduct.rows().data().toArray();
 		if (itemDataIsValid(itemData)) {
 

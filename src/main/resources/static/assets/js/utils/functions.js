@@ -58,6 +58,10 @@ function isAObject(o){
 	return o !== null && typeof(o) === 'object'
 }
 
+function isNullOrUndefined(value){
+	return isNull(value) || isUndefined(value);
+}
+
 function isNullOrUndefinedOrNaN(value) {
     return isNull(value) || isUndefined(value) || isNaN(value);
 }
