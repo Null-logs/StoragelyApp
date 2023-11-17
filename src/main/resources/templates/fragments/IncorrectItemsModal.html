@@ -1,0 +1,50 @@
+<div class="modal fade" id="editItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeSm"
+	aria-hidden="true" data-backdrop="static" data-keyboard="false" th:fragment="incorrect-items-modal">
+	<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+		<div class="modal-content">
+			<div class="modal-header pb-1">
+				<h3 class="card-label">Registros incorrectos</h3>
+				<button type="button" ng-click="" class="btn" data-dismiss="modal" aria-label="Close">
+					<i class="flaticon2-cancel-music"></i>
+				</button>
+			</div>
+			<div class="modal-body py-0">
+				<div id="tableDataIncorrectProducts">
+					<table id="inputItems"
+						class="table table-bordered table-hover table-checkable dataTable no-footer dtr-inline"
+						style="margin-top: 13px !important; width:100%; table-layout: fixed" role="grid">
+						<thead>
+							<tr>
+								<th style="width: 5%">Clave</th>
+								<th>Descripción</th>
+								<th>Precio</th>
+								<th>Ganancia (%)</th>
+								<th>Precio final</th>
+								<th>Cantidad</th>
+								<th>Unidad</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+						<tfoot>
+							<tr>
+								<th style="width: 5%">Clave</th>
+								<th>Descripción</th>
+								<th>Precio</th>
+								<th>Ganancia (%)</th>
+								<th>Precio final</th>
+								<th>Cantidad</th>
+								<th>Unidad</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer py-2">
+				<button type="button" class="btn btn-secondary" ng-click="">Cancelar</button>
+				<button type="button" class="btn btn-primary" ng-click="">Guardar</button>
+			</div>
+		</div>
+	</div>
+</div>

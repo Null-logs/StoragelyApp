@@ -1,0 +1,126 @@
+<div th:fragment="MasiveAddProducts">
+	<!--begin::Subheader-->
+	<div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+		<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+			<!--begin::Info-->
+			<div class="d-flex align-items-center flex-wrap mr-1">
+				<!--begin::Page Heading-->
+				<div class="d-flex align-items-baseline flex-wrap mr-5">
+					<!--begin::Page Title-->
+					<h5 class="text-dark font-weight-bold my-1 mr-5">Registro masivo</h5>
+					<!--end::Page Title-->
+					<!--begin::Breadcrumb-->
+					<ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+						<li class="breadcrumb-item">
+							<a href="" class="text-muted">Productos</a>
+						</li>
+						<li class="breadcrumb-item">
+							<a href="" class="text-muted">Registro masivo</a>
+						</li>
+					</ul>
+					<!--end::Breadcrumb-->
+				</div>
+				<!--end::Page Heading-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Toolbar-->
+			<div class="d-flex align-items-center">
+
+			</div>
+			<!--end::Toolbar-->
+		</div>
+	</div>
+	<!--end::Subheader-->
+	<!--begin::Entry-->
+	<div class="d-flex flex-column-fluid">
+		<!--begin::Container-->
+		<div class="container">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<span class="card-icon">
+							<i class="flaticon2-box-1 text-primary icon-2x"></i>
+						</span>
+						<h3 class="card-label">Registrar nuevo producto</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="row justify-content-center align-items-center" data-height="450" ng-hide="itIsVisible">
+						<!--begin: Pricing-->
+						<div class="col-md-8 col-xxl-8" id="uploadFile">
+							<div class="pt-100 pt-md-5 pb-15 px-5 text-center">
+								<!--begin::Content-->
+								<span class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Carga
+									de archivos</span>
+								<div class="m-10">
+									<div class="card card-custom overlay">
+										<div class="card-body p-0">
+											<div class="overlay-wrapper">
+												<i class="flaticon-file-1 icon-10x"></i>
+											</div>
+											<div class="overlay-layer align-items-end justify-content-end pb-5 pr-5">
+												<button class="btn btn-clean btn-icon mr-2" data-toggle="tooltip"
+													title="Descargar layout"><i
+														class="flaticon-multimedia-4 icon-lg text-primary"></i></button>
+												<button class="btn btn-clean btn-icon" data-toggle="tooltip"
+													title="Subir archivo" ng-click="triggerInput()"><i
+														class="flaticon-upload-1 icon-lg text-primary"></i></button>
+												<input type="file" accept=".xlsx"
+													id="inputFileProducts" hidden>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--end::Content-->
+							</div>
+						</div>
+						<!--end: Pricing-->
+					</div>
+					<div id="tableDataProducts" ng-hide="!itIsVisible">
+						<table id="inputItems"
+							class="table table-bordered table-hover table-checkable dataTable no-footer dtr-inline"
+							style="margin-top: 13px !important; width:100%; table-layout: fixed" role="grid">
+							<thead>
+								<tr>
+									<th style="width: 5%">Clave</th>
+									<th>Descripción</th>
+									<th>Precio</th>
+									<th>Ganancia (%)</th>
+									<th>Precio final</th>
+									<th>Cantidad</th>
+									<th>Unidad</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+							<tfoot>
+								<tr>
+									<th style="width: 5%">Clave</th>
+									<th>Descripción</th>
+									<th>Precio</th>
+									<th>Ganancia (%)</th>
+									<th>Precio final</th>
+									<th>Cantidad</th>
+									<th>Unidad</th>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+				<div class="card-footer d-flex justify-content-between">
+					<a href="#" ng-click="cleanDatatable()" class="btn btn-light-warning font-weight-bold">Limpiar
+						tablas</a>
+					<a href="#" ng-click="getData()" class="btn btn-light-primary font-weight-bold">Guardar datos</a>
+				</div>
+			</div>
+			<!--end::Card-->
+		</div>
+		<!--end::Container-->
+	</div>
+	<!--end::Entry-->
+</div>
+
+
+

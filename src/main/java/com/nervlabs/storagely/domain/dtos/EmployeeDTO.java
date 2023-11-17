@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.nervlabs.storagely.business.commons.enums.Roles;
 
+import groovy.transform.builder.Builder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class EmployeeDTO {
+@Builder
+public class EmployeeDto {
 	
 	private UUID id;
 	private String username;

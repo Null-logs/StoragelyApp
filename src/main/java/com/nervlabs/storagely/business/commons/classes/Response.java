@@ -18,4 +18,5 @@ public class Response {
 	private String message;
 	private Object data;
 	private Types type;
+	private int qty;
 }

@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public enum Roles {
-	STORER("Almacenista"), ADIM("Administrador"), VENDOR("Vendedor"), UNDEFINED("#");
+	STORER("Almacenista"), ADMIN("Administrador"), VENDOR("Vendedor"), UNDEFINED("#");
 
 	private String rolEsp;
 	
@@ -16,7 +16,9 @@ public enum Roles {
 		 Set<String> rolesEs = new HashSet<>();
 		 
 		 for( Roles rol : values()) {
-			 rolesEs.add(rol.rolEsp);
+			 
+			 if(!(rol.rolEsp.contentEquals("#")))
+				 rolesEs.add(rol.rolEsp);
 		 }
 		 
 		 return rolesEs;

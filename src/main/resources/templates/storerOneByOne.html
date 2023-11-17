@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="addItemApp" xmlns:th="https://www.thymeleaf.org">
+<!--begin::Head-->
+
+<head>
+	<div th:replace="~{fragments/headerFragment :: headerBase}">
+
+	</div>
+
+</head>
+<!--end::Head-->
+
+<!--begin::Body-->
+
+<body ng-controller="addItemCtrl as vm" id="kt_body"
+	class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+	<!--begin::Main-->
+	<!--begin::Header Mobile-->
+	<div th:replace="~{fragments/HeaderMobile :: header-mobile}"></div>
+	<!--end::Header Mobile-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Page-->
+		<div class="d-flex flex-row flex-column-fluid page">
+			<!--begin::Aside-->
+			<div th:replace="~{fragments/Aside :: aside}"> </div>
+			<!--end::Aside-->
+			<!--begin::Wrapper-->
+			<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+				<!--begin::Header-->
+				<div id="kt_header" class="header header-fixed">
+					<!--begin::Container-->
+					<div
+						class="bg-white container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap py-2 py-lg-4">
+						<!--begin::Info-->
+						<div class="d-flex align-items-center flex-wrap mr-2 py-2 py-lg-4">
+							<!--begin::Page Title-->
+							<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5"></h5>
+							<!--end::Page Title-->
+							<!--begin::Actions-->
+							<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
+							<span class="text-muted font-weight-bold mr-4">Nombre</span>
+							<a class="btn btn-light-warning font-weight-bolder btn-sm">Rol</a>
+							<!--end::Actions-->
+						</div>
+						<!--end::Info-->
+						<!--begin::Toolbar-->
+						<div class="d-flex align-items-center py-2 py-lg-4">
+							<!--begin::Actions-->
+							<!--begin::Daterange-->
+							<a href="#" class="btn btn-sm btn-light font-weight-bold mr-2" data-placement="left">
+								<span class="text-muted font-size-base font-weight-bold mr-2">Fecha</span>
+								<span class="text-primary font-size-base font-weight-bolder">fecha actual</span>
+							</a>
+							<!--end::Daterange-->
+							<!--begin::Dropdowns-->
+							<div class="dropdown dropdown-inline" data-toggle="tooltip" title="Usuario"
+								data-placement="left">
+								<a href="#" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">
+									<span class="svg-icon svg-icon-success svg-icon-lg">
+										<!--begin::Svg Icon | path:assets/media/svg/icons/Files/File-plus.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+											viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<rect x="0" y="0" width="24" height="24" />
+												<path
+													d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z"
+													fill="#000000" opacity="0.3" />
+												<path
+													d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z"
+													fill="#000000" opacity="0.3" />
+												<path
+													d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+													fill="#000000" opacity="0.3" />
+											</g>
+										</svg>
+										<!--end::Svg Icon-->
+									</span>
+								</a>
+								<div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right py-3">
+									<!--begin::Navigation-->
+									<ul class="navi navi-hover py-5">
+										<li class="navi-item">
+											<a href="#" class="navi-link">
+												<span class="navi-icon">
+													<i class="flaticon-cancel"></i>
+												</span>
+												<span class="navi-text">Cerrar sesión</span>
+											</a>
+										</li>
+									</ul>
+									<!--end::Navigation-->
+								</div>
+							</div>
+							<!--end::Dropdowns-->
+						</div>
+						<!--end::Toolbar-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Header-->
+				<!--begin::ContentHere-->
+				<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+					<div th:replace="~{fragments/AddOneProduct :: AddOneProduct}"> </div>
+				</div>
+				<!--end::ContentHere-->
+				<!--begin::Footer-->
+				<div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
+					<!--begin::Container-->
+					<div
+						class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+						<!--begin::Copyright-->
+						<div class="text-dark order-2 order-md-1">
+							<span class="text-muted font-weight-bold mr-2">2023 ©</span>
+							<a class="text-dark-75 text-hover-primary">NervLabs</a>
+						</div>
+						<!--end::Copyright-->
+						<!--begin::Nav-->
+						<div class="nav nav-dark">
+							<a class="nav-link pl-0 pr-5">About</a>
+							<a class="nav-link pl-0 pr-0" data-toggle="tooltip"
+								title="null.logs.02@gmail.com">Contact</a>
+						</div>
+						<!--end::Nav-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Footer-->
+			</div>
+			<!--end::Wrapper-->
+		</div>
+		<!--end::Page-->
+	</div>
+	<!--end::Main-->
+	<!-- begin::User Panel-->
+	<!-- end::User Panel-->
+	<!--begin::Quick Cart-->
+
+	<!--end::Quick Cart-->
+	<!--begin::Quick Panel-->
+
+	<!--end::Quick Panel-->
+	<!--begin::Chat Panel-->
+
+	<!--end::Chat Panel-->
+	<!--begin::Scrolltop-->
+	<div id="kt_scrolltop" class="scrolltop">
+		<span class="svg-icon">
+			<!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Up-2.svg-->
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+				height="24px" viewBox="0 0 24 24" version="1.1">
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					<polygon points="0 0 24 0 24 24 0 24" />
+					<rect fill="#000000" opacity="0.3" x="11" y="10" width="2" height="10" rx="1" />
+					<path
+						d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z"
+						fill="#000000" fill-rule="nonzero" />
+				</g>
+			</svg>
+			<!--end::Svg Icon-->
+		</span>
+	</div>
+	<!--end::Scrolltop-->
+	<!--begin::Sticky Toolbar-->
+	<ul class="sticky-toolbar nav flex-column pl-2 pr-2 pt-3 pb-3 mt-4">
+		<!--begin::Item-->
+		<li class="nav-item mb-2" id="kt_demo_panel_toggle" data-toggle="tooltip" title="Check out more demos"
+			data-placement="right">
+			<a class="btn btn-sm btn-icon btn-bg-light btn-icon-success btn-hover-success" href="#">
+				<i class="flaticon2-drop"></i>
+			</a>
+		</li>
+		<!--end::Item-->
+		<!--begin::Item-->
+		<li class="nav-item mb-2" data-toggle="tooltip" title="Layout Builder" data-placement="left">
+			<a class="btn btn-sm btn-icon btn-bg-light btn-icon-primary btn-hover-primary"
+				href="https://preview.keenthemes.com/metronic/demo1/builder.html" target="_blank">
+				<i class="flaticon2-gear"></i>
+			</a>
+		</li>
+		<!--end::Item-->
+		<!--begin::Item-->
+		<li class="nav-item mb-2" data-toggle="tooltip" title="Documentation" data-placement="left">
+			<a class="btn btn-sm btn-icon btn-bg-light btn-icon-warning btn-hover-warning"
+				href="https://keenthemes.com/metronic/?page=docs" target="_blank">
+				<i class="flaticon2-telegram-logo"></i>
+			</a>
+		</li>
+		<!--end::Item-->
+		<!--begin::Item-->
+		<li class="nav-item" id="kt_sticky_toolbar_chat_toggler" data-toggle="tooltip" title="Chat Example"
+			data-placement="left">
+			<a class="btn btn-sm btn-icon btn-bg-light btn-icon-danger btn-hover-danger" href="#" data-toggle="modal"
+				data-target="#kt_chat_modal">
+				<i class="flaticon2-chat-1"></i>
+			</a>
+		</li>
+		<!--end::Item-->
+	</ul>
+	<!--end::Sticky Toolbar-->
+	<!--begin::GlobalScripts-->
+	<div th:replace="~{fragments/GlobalScripts :: global-scripts}"></div>
+	<script th:src="@{/assets/js/controllers/storerCtrl/addAItemCtrl.js}"></script>
+	<!--end::GlobalScripts-->
+</body>
+<!--end::Body-->
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--begin::Head-->
+
+<head>
+	<div th:replace="~{fragments/headerFragment :: headerBase}"></div>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+	class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+	<!--begin::Main-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Error-->
+		<div class="error error-5 d-flex flex-row-fluid bgi-size-cover bgi-position-center"
+			style="background-image: url(/assets/media/error/bg5.jpg);">
+			<!--begin::Content-->
+			<div class="container d-flex flex-row-fluid flex-column justify-content-md-center p-12">
+				<h1 class="error-title font-weight-boldest text-info mt-10 mt-md-0 mb-12">Oops!</h1>
+				<p class="font-weight-boldest display-4">Algo salió mal aquí.</p>
+				<p class="font-size-h3">Estamos trabajando en ello y lo arreglaremos lo antes posible. Puedes volver atrás ;D.</p>
+			</div>
+			<!--end::Content-->
+		</div>
+		<!--end::Error-->
+	</div>
+	<!--end::Main-->
+	<!--begin::GlobalScripts-->
+	<div th:replace="~{fragments/GlobalScripts :: global-scripts}"></div>
+	<!--end::GlobalScripts-->
+</body>
+<!--end::Body-->
+
+</html>
