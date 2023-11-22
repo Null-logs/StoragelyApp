@@ -9,8 +9,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -38,7 +36,8 @@ public class WebSecurityConfig {
 						.requestMatchers("/assets/**").permitAll()
 						.requestMatchers("/swagger-ui/**").permitAll()
 						.requestMatchers("/access/**").permitAll()
-						.requestMatchers("/item/**").permitAll()
+						.requestMatchers("/storer/**").permitAll()
+						.requestMatchers("/storer/view/**").permitAll()
 						.anyRequest().hasAuthority("USER"))
 				.httpBasic(withDefaults()).formLogin(form -> form.loginPage("/login.html").permitAll())
 				.securityContext((securityContext) -> securityContext

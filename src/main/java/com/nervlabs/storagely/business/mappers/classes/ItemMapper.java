@@ -21,4 +21,5 @@ public class ItemMapper implements IItemMapper {
 						.profitPercent(unregisteredItemDto.getProfitPercent())
 						.type("ITEM").build();
 	}
+
 }

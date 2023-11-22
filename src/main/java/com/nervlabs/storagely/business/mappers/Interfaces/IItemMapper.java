@@ -1,5 +1,6 @@
 package com.nervlabs.storagely.business.mappers.Interfaces;
 
+
 import org.mapstruct.Mapper;
 
 import com.nervlabs.storagely.domain.dtos.UnregisteredItemDto;

@@ -1,11 +1,18 @@
 package com.nervlabs.storagely.business.services.clasess;
 
+
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.nervlabs.storagely.business.commons.classes.DataTableResponse;
 import com.nervlabs.storagely.business.mappers.Interfaces.IItemMapper;
 import com.nervlabs.storagely.business.services.interfaces.IItemService;
 import com.nervlabs.storagely.domain.dtos.UnregisteredItemDto;
@@ -24,7 +31,7 @@ public class ItemsService implements IItemService {
 	}
 
 	@Override
-	public Set<ItemEntity> parseThe(Set<UnregisteredItemDto> unregisteredItems) {
+	public Set<ItemEntity> unregisteredItemDtoSetToItemEntitySet(Set<UnregisteredItemDto> unregisteredItems) {
 		// TODO Auto-generated method stub
 		return unregisteredItems.stream().map(i -> maper.UnregisteredItemDtoToItemEntity(i))
 				.collect(Collectors.toSet());
@@ -96,5 +103,40 @@ public class ItemsService implements IItemService {
 		var y =  c.stream().collect(Collectors.toMap(i -> i.getKey(), i -> i.getDescription()));
 		return y;
 	}
+	
+	@Override
+	public Page<ItemEntity> searchItems(String searchTerm, int pageNumber, int pageSize, String sortDirection) {
+        Pageable pageable;
 
+        if ("asc".equalsIgnoreCase(sortDirection)) {
+            pageable = PageRequest.of(pageNumber, pageSize, Sort.by("description").ascending());
+            
+        } else {
+            pageable = PageRequest.of(pageNumber, pageSize, Sort.by("description").descending());
+            
+        }
+        
+        var y = searchTerm;
+
+        var x = repository.findByDescriptionContainingIgnoreCase(y, pageable);
+//        @SuppressWarnings("unused")
+//		var y = searchItemsList(searchTerm, pageNumber, pageSize, sortDirection);
+        return x;
+    }
+
+	@Override
+	public DataTableResponse searchItemsList(String searchTerm, int pageNumber, int pageSize, String sortDirection, int draw) {
+		List<ItemEntity> data;
+		
+		if ("asc".equalsIgnoreCase(sortDirection)) {
+            data = repository.findByDescriptionAndTypeAscList(searchTerm,pageNumber,pageSize);	
+        } else {
+        	data = repository.findByDescriptionAndTypeDescList(searchTerm,pageNumber,pageSize);
+        }
+		
+		var x = DataTableResponse.builder().data(data).draw(draw).recordsFiltered(repository.countFindByDescriptionAndType(searchTerm)).recordsTotal(data.size()).build();
+		return x;
+	}
+	
+	
 }

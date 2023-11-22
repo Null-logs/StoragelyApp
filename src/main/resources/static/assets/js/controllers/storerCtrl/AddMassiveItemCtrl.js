@@ -221,7 +221,6 @@ app.controller("massiveAddProductCtrl", ["$scope", "$http", function($scope, $ht
 
 	$scope.clearItemData = function() {
 		resetItemModel()
-		//		$scope.$apply();
 	}
 
 	//#endregion

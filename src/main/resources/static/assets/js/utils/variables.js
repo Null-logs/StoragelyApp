@@ -51,10 +51,11 @@ const ROUTES = {
 	},
 	EMPLOYEE: {
 		STORER: {
-			HOME: "/storer/view/oneByOne.html",
-			ONE_BY_ONE: "/",
+			HOME: "/storer/view/productos.html",
+			ONE_BY_ONE: "/storer/view/oneByOne.html",
 			MASSIVE: "/storer/view/massive.html",
 			SAVE_ITEMS: "/storer/register",
+			GET_ALL_ITEMS:"/storer/get"
 		},
 	}
 }

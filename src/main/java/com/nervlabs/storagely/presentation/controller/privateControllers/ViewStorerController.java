@@ -17,4 +17,8 @@ public class ViewStorerController {
 	    return "storerMassive";
 	}
 	
+	@RequestMapping(value = "/productos.html")
+	public String all() {
+		return "allItems";
+	}
 }

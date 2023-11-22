@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en" ng-app="app" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" ng-app="app">
 <!--begin::Head-->
 
 <head>
+	<link th:href="@{/assets/plugins/custom/datatables/datatables.bundle.css}" rel="stylesheet" type="text/css">
 	<div th:replace="~{fragments/headerFragment :: headerBase}">
-
 	</div>
-
 </head>
 <!--end::Head-->
-
 <!--begin::Body-->
 
-<body ng-controller="addItemCtrl as vm" id="kt_body"
+<body ng-controller="allItemCtrl" id="kt_body"
 	class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 	<!--begin::Main-->
 	<!--begin::Header Mobile-->
@@ -35,7 +33,7 @@
 						<!--begin::Info-->
 						<div class="d-flex align-items-center flex-wrap mr-2 py-2 py-lg-4">
 							<!--begin::Page Title-->
-							<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5"></h5>
+							<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Bienvenido</h5>
 							<!--end::Page Title-->
 							<!--begin::Actions-->
 							<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
@@ -46,7 +44,6 @@
 						<!--end::Info-->
 						<!--begin::Toolbar-->
 						<div class="d-flex align-items-center py-2 py-lg-4">
-							<!--begin::Actions-->
 							<!--begin::Daterange-->
 							<a href="#" class="btn btn-sm btn-light font-weight-bold mr-2" data-placement="left">
 								<span class="text-muted font-size-base font-weight-bold mr-2">Fecha</span>
@@ -103,7 +100,7 @@
 				<!--end::Header-->
 				<!--begin::ContentHere-->
 				<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-					<div th:replace="~{fragments/AddOneProduct :: AddOneProduct}"> </div>
+					<div th:replace="~{fragments/AllItemTable :: all-item-table}"> </div>
 				</div>
 				<!--end::ContentHere-->
 				<!--begin::Footer-->
@@ -113,7 +110,7 @@
 						class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
 						<!--begin::Copyright-->
 						<div class="text-dark order-2 order-md-1">
-							<span class="text-muted font-weight-bold mr-2">2023 ©</span>
+							<span class="text-muted font-weight-bold mr-2">2023©</span>
 							<a class="text-dark-75 text-hover-primary">NervLabs</a>
 						</div>
 						<!--end::Copyright-->
@@ -200,9 +197,17 @@
 		<!--end::Item-->
 	</ul>
 	<!--end::Sticky Toolbar-->
+
+	<!--begin::Modals-->
+
+	<!--end::Modals-->
+	
 	<!--begin::GlobalScripts-->
 	<div th:replace="~{fragments/GlobalScripts :: global-scripts}"></div>
-	<script th:src="@{/assets/js/controllers/storerCtrl/AddItemCtrl.js}"></script>
+	<script th:src="@{/assets/js/lib/read-excel-file.min.js}"></script>
+	<script th:src="@{/assets/plugins/custom/datatables/datatables.bundle.js}"></script>
+	<script th:src="@{/assets/js/controllers/storerCtrl/AllItemCtrl.js}"></script>
+	<script th:src="@{/assets/js/pages/features/miscellaneous/blockui.js}"></script>
 	<!--end::GlobalScripts-->
 </body>
 <!--end::Body-->

@@ -7,12 +7,14 @@ import groovy.transform.builder.Builder;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
 public class UnregisteredItemDto {
 	private String key;

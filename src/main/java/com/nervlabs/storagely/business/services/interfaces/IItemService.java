@@ -1,16 +1,17 @@
 package com.nervlabs.storagely.business.services.interfaces;
 
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
 
+import com.nervlabs.storagely.business.commons.classes.DataTableResponse;
 import com.nervlabs.storagely.domain.dtos.UnregisteredItemDto;
 import com.nervlabs.storagely.domain.entites.ItemEntity;
 
 public interface IItemService {
-	Set<ItemEntity> parseThe(Set<UnregisteredItemDto> unregisteredItems);
+	Set<ItemEntity> unregisteredItemDtoSetToItemEntitySet(Set<UnregisteredItemDto> unregisteredItems);
 
 	boolean areRepeatedItems(Map<String,String> ItemKeysAndDescriptions, Set<UnregisteredItemDto> unregisteredItems);
 	
@@ -29,4 +30,9 @@ public interface IItemService {
 	Set<UnregisteredItemDto> getItemsThathaveAttNulls(Set<UnregisteredItemDto> unregisteredItems);
 	
 	Set<UnregisteredItemDto> getItemsThatNothaveAttNulls(Set<UnregisteredItemDto> unregisteredItems);
+	
+	Page<ItemEntity> searchItems(String searchTerm, int pageNumber, int pageSize, String sortDirection);
+	
+	DataTableResponse searchItemsList(String searchTerm, int pageNumber, int pageSize, String sortDirection, int draw);
+	
 }

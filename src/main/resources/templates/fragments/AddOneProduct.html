@@ -46,129 +46,132 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<div class="row justify-content-center">
-						<!--begin: Pricing-->
-						<div class="col-md-4 col-xxl-3">
-							<div class="pt-100 pt-md-5 pb-15 px-5">
-								<!--begin::Icon-->
-								<!--end::Icon-->
-								<!--begin::Content-->
-								<span
-									class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Detalles</span>
-								<div class="form-group mt-10 mb-10">
-									<label>Descripción</label>
-									<div class="input-group input-group-solid">
-										<div class="input-group-prepend"><span class="input-group-text"><i
-													class="la flaticon2-box-1 icon-lg"></i></span></div>
-										<input type="text" class="form-control" placeholder="Lapicero tinta ..." />
-									</div>
-									<span class="form-text text-muted">La manera en la que usted identifica el producto,
-										procure que sea breve.</span>
-								</div>
-								<div class="form-group mt-10 mb-10">
-									<label>Clave</label>
-									<div class="input-group input-group-solid">
-										<input type="text" class="form-control" aria-label="Large size"
-											placeholder="5901234123457" />
-										<div class="input-group-prepend">
-											<button class="btn btn-primary" data-toggle="tooltip"
-												title="Generar aleatoriamente"><i class="flaticon-refresh"></i></span>
+					<form id="itemEditForm">
+						<div class="row justify-content-center">
+							<!--begin: Pricing-->
+							<div class="col-md-4 col-xxl-4">
+								<div class="pt-100 pt-md-5 pb-1 px-5">
+									<!--begin::Icon-->
+									<!--end::Icon-->
+									<!--begin::Content-->
+									<span
+										class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Detalles</span>
+									<div class="form-group mt-10 mb-10">
+										<label>Descripción</label>
+										<div class="input-group input-group-solid">
+											<div class="input-group-prepend"><span class="input-group-text"><i
+														class="la flaticon2-box-1 icon-lg"></i></span></div>
+											<input name="description" type="text" class="form-control"
+												placeholder="Lapicero tinta ..." ng-model="item.description" />
 										</div>
+										<span class="form-text text-muted">La manera en la que usted identifica el
+											producto,
+											procure que sea breve.</span>
 									</div>
-									<span class="form-text text-muted">Puede ser el codigo de barras.</span>
-								</div>
-								<div class="form-group mt-10 mb-10">
-									<label>Más información</label>
-									<div class="input-group input-group-solid">
-										<textarea class="form-control form-control-solid" rows="5"
-											style="resize: none;"></textarea>
-									</div>
-									<span class="form-text text-muted">Información que pueda ayudar a diferenciar más al
-										producto, máximo 50 palabras.</span>
-								</div>
-								<!--end::Content-->
-							</div>
-						</div>
-						<!--end: Pricing-->
-						<!--begin: Pricing-->
-						<div class="col-md-4 col-xxl-3 border-x-0 border-x-md border-y border-y-md-0">
-							<div class="pt-100 pt-md-5 pb-15 px-5">
-								<!--begin::Icon-->
-								<!--end::Icon-->
-								<!--begin::Content-->
-								<span
-									class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Costo</span>
-								<div class="form-group mt-10 mb-10">
-									<label>Precio bruto</label>
-									<div class="input-group input-group-solid">
-										<div class="input-group-prepend"><span class="input-group-text">$</span></div>
-										<input type="number" min="0" class="form-control" placeholder="89.45" />
-									</div>
-									<span class="form-text text-muted">El precio en el cual usted adquirió el producto
-										por
-										unidad.</span>
-								</div>
-								<div class="form-group mt-10 mb-10">
-									<label>Margen</label>
-									<div class="input-group input-group-solid">
-										<input type="number" min="0" class="form-control" aria-label="Large size"
-											placeholder="10" />
-										<div class="input-group-prepend">
-											<button class="btn btn-primary" data-toggle="tooltip"
-												title="Calcular margen"><i class="flaticon-refresh"></i></span>
+									<div class="form-group mt-10 mb-10">
+										<label>Clave</label>
+										<div class="input-group input-group-solid">
+											<input name="key" type="text" class="form-control" aria-label="Large size"
+												placeholder="5901234123457" ng-model="item.key" />
 										</div>
+										<span class="form-text text-muted">Puede ser el codigo de barras.</span>
 									</div>
-									<span class="form-text text-muted">El porcentaje de ganancia sobre el
-										producto.</span>
-								</div>
-								<div class="form-group mt-10 mb-10">
-									<label>Precio neto</label>
-									<div class="input-group input-group-solid">
-										<div class="input-group-prepend"><span class="input-group-text">$</span></div>
-										<input readonly type="number" min="0" class="form-control"
-											placeholder="89.45" />
+									<div class="form-group mt-10 mb-10">
+										<label>Más información</label>
+										<div class="input-group input-group-solid">
+											<textarea name="information" class="form-control form-control-solid"
+												rows="5" style="resize: none;" ng-model="item.information"></textarea>
+										</div>
+										<span class="form-text text-muted">Información que pueda ayudar a
+											diferenciar más al
+											producto, máximo 50 palabras.</span>
 									</div>
-									<span class="form-text text-muted">El precio en el cual usted venderá su
-										producto./span>
+									<!--end::Content-->
 								</div>
-								<!--end::Content-->
 							</div>
-						</div>
-						<!--end: Pricing-->
-						<!--begin: Pricing-->
-						<div class="col-md-4 col-xxl-3">
-							<div class="pt-100 pt-md-5 pb-15 px-5">
-								<!--begin::Icon-->
-								<!--end::Icon-->
-								<!--begin::Content-->
-								<span
-									class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Almacén</span>
-								<div class="form-group mt-10 mb-10">
-									<label>Cantidad</label>
-									<div class="input-group input-group-solid">
-										<div class="input-group-prepend"><span class="input-group-text">#</span></div>
-										<input type="number" min="0" class="form-control" placeholder="0" />
+							<!--end: Pricing-->
+							<!--begin: Pricing-->
+							<div class="col-md-4 col-xxl-4 border-x-0 border-x-md border-y border-y-md-0">
+								<div class="pt-100 pt-md-5 pb-15 px-5">
+									<!--begin::Icon-->
+									<!--end::Icon-->
+									<!--begin::Content-->
+									<span
+										class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Costo</span>
+									<div class="form-group mt-10 mb-10">
+										<label>Precio bruto</label>
+										<div class="input-group input-group-solid">
+											<div class="input-group-prepend"><span class="input-group-text">$</span>
+											</div>
+											<input name="price" type="text" class="form-control" placeholder="89.45"
+												ng-model="item.price" ng-change="calculateFinalePrice(item)" />
+										</div>
+										<span class="form-text text-muted">El precio en el cual usted adquirió el
+											producto
+											por
+											unidad.</span>
 									</div>
-									<span class="form-text text-muted">Cantidad de unidades que entraran al
-										almacén.</span>
-								</div>
-								<div class="form-group mt-10 mb-10">
-									<label>Unidad de venta</label>
-									<div class="input-group input-group-solid">
-										<div class="input-group-prepend"><span class="input-group-text"><i
-													class="la flaticon2-box-1 icon-lg"></i></span></div>
-										<select class="form-control">
-											<option>1</option>
-											<option>2</option>
-										</select>
+									<div class="form-group mt-10 mb-10">
+										<label>Margen</label>
+										<div class="input-group input-group-solid">
+											<input name="profitPercent" type="text" class="form-control"
+												aria-label="Large size" placeholder="10" ng-model="item.profitPercent"
+												ng-change="calculateFinalePrice(item)" />
+										</div>
+										<span class="form-text text-muted">El porcentaje de ganancia sobre el
+											producto.</span>
 									</div>
-									<span class="form-text text-muted">Unidad en la cual venderá el producto.</span>
+									<div class="form-group mt-10 mb-10">
+										<label>Precio neto</label>
+										<div class="input-group input-group-solid">
+											<div class="input-group-prepend"><span class="input-group-text">$</span>
+											</div>
+											<input name="finalPrice" readonly type="text" class="form-control"
+												placeholder="89.45" ng-model="item.finalPrice" />
+										</div>
+										<span class="form-text text-muted">El precio en el cual usted venderá su
+											producto.</span>
+									</div>
+									<!--end::Content-->
 								</div>
-								<!--end::Content-->
 							</div>
+							<!--end: Pricing-->
+							<!--begin: Pricing-->
+							<div class="col-md-4 col-xxl-4">
+								<div class="pt-100 pt-md-5 pb-15 px-5">
+									<!--begin::Icon-->
+									<!--end::Icon-->
+									<!--begin::Content-->
+									<span
+										class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Almacén</span>
+									<div class="form-group mt-10 mb-10">
+										<label>Cantidad</label>
+										<div class="input-group input-group-solid">
+											<div class="input-group-prepend"><span class="input-group-text">#</span>
+											</div>
+											<input name="quantity" type="text" class="form-control" placeholder="0"
+												ng-model="item.quantity" />
+										</div>
+										<span class="form-text text-muted">Cantidad de unidades que entraran al
+											almacén.</span>
+									</div>
+									<div class="form-group mt-10 mb-10">
+										<label>Unidad de venta</label>
+										<div class="input-group input-group-solid">
+											<div class="input-group-prepend"><span class="input-group-text"><i
+														class="la flaticon2-box-1 icon-lg"></i></span></div>
+											<input name="unit" type="text" class="form-control" placeholder="Pieza"
+												ng-model="item.unit" />
+										</div>
+										<span class="form-text text-muted">Unidad en la cual venderá el
+											producto.</span>
+									</div>
+									<!--end::Content-->
+								</div>
+							</div>
+							<!--end: Pricing-->
 						</div>
-						<!--end: Pricing-->
-					</div>
+					</form>
 				</div>
 				<div class="card-footer d-flex justify-content-between">
 					<a href="#" class="btn btn-light-warning font-weight-bold">Limpiar formulario</a>
