@@ -17,7 +17,7 @@ app.controller("massiveAddProductCtrl", ["$scope", "$http", function($scope, $ht
 		Descripción: "description",
 		Precio: "price",
 		"Porcentaje de ganancia": "profitPercent",
-		"Precio final": "finalPrice",
+		"Precio final": "finalPrice",	
 		Cantidad: "quantity",
 		Unidad: "unit",
 		Información: "information",

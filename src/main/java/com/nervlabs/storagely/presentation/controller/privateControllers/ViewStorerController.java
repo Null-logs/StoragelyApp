@@ -21,4 +21,9 @@ public class ViewStorerController {
 	public String all() {
 		return "allItems";
 	}
+	
+	@RequestMapping(value = "/regiterSale.html")
+	public String saleRegiter() {
+		return "saleRegiter";
+	}
 }

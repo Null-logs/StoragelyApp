@@ -44,6 +44,32 @@ const MSJ = {
 	AGREE: "De acuerdo",
 }
 
+const dataTableLanguaje = {
+				// url: "/assets/js/pages/crud/datatables/search-options/es_es.json", ///'lengthMenu': 'Display _MENU_',
+				decimal: "",
+				emptyTable: "No hay datos disponibles en la tabla",
+				info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
+				infoEmpty: "Mostrando 0 a 0 de 0 registros",
+				infoFiltered: "(filtrados de _MAX_ registros totales)",
+				infoPostFix: "",
+				thousands: ",",
+				lengthMenu: "Mostrar _MENU_   registros",
+				loadingRecords: "Cargando...",
+				processing: "Procesando...",
+				search: "Buscar:",
+				zeroRecords: "No se encontraron registros coincidentes",
+				paginate: {
+					first: "Primera",
+					last: "Última",
+					next: "Siguiente",
+					previous: "Anterior",
+				},
+				aria: {
+					sortAscending: ": activar para ordenar la columna ascendente",
+					sortDescending: ": activar para ordenar la columna descendente",
+				},
+			}
+
 const ROUTES = {
 	ACCESS: {
 		GET_ROLES: "/access/roles",
@@ -59,6 +85,7 @@ const ROUTES = {
 		},
 	}
 }
+
 
 const ROLES = {
 	"Almacenista": "STORER",

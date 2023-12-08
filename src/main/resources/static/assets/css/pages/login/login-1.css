@@ -1,3 +1,24 @@
+.bg-login-kiosko {
+  /* The image used */
+  background-image: url("./working2.svg");
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-white-kiosko {
+  background-color: #f2f1ec;
+}
+
+.text-primary-ki {
+  color: #365b6d;
+}
+
+
+
+
 .login.login-1 .login-aside .aside-img {
   min-height: 450px; }
 

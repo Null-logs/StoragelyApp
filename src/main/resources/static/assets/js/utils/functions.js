@@ -2,6 +2,11 @@ const swal = async (title, msg, typeAlert) => {
 	Swal.fire(title, msg, typeAlert)
 }
 
+function formatAsCurrencyMXN(number) {
+    return number.toLocaleString('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 4  });
+}
+
+
 async function postData(url = "", data = {}) {
 
 	const rs = await fetch(url, {

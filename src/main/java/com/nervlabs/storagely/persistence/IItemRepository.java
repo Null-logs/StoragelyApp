@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.lowagie.text.pdf.AcroFields.Item;
 import com.nervlabs.storagely.domain.entites.ItemEntity;
 
 @Repository
@@ -23,6 +24,9 @@ public interface IItemRepository extends JpaRepository<ItemEntity, UUID> {
 
 	@Query("SELECT ie.key, ie.description FROM ItemEntity ie")
 	List<ItemEntity> findAllKeysAndDescriptions();
+	
+	@Query("SELECT ie FROM ItemEntity ie ORDER BY ie.quantity")
+	List<ItemEntity> findAllOrderByQty();
 	
 	@Query("SELECT " +
 	        "   i " +

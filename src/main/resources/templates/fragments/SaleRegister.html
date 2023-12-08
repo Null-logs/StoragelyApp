@@ -1,4 +1,4 @@
-<div th:fragment="all-item-table">
+<div th:fragment="regiter-sale">
 	<!--begin::Subheader-->
 	<div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
 		<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
@@ -7,15 +7,15 @@
 				<!--begin::Page Heading-->
 				<div class="d-flex align-items-baseline flex-wrap mr-5">
 					<!--begin::Page Title-->
-					<h5 class="text-dark font-weight-bold my-1 mr-5">Visualización de productos </h5>
+					<h5 class="text-dark font-weight-bold my-1 mr-5">Registro de vetas</h5>
 					<!--end::Page Title-->
 					<!--begin::Breadcrumb-->
 					<ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
 						<li class="breadcrumb-item">
-							<a href="" class="text-muted">Productos</a>
+							<a href="" class="text-muted">Ventas</a>
 						</li>
 						<li class="breadcrumb-item">
-							<a href="" class="text-muted">Visualización de productos </a>
+							<a href="" class="text-muted">Registro de vetas </a>
 						</li>
 					</ul>
 					<!--end::Breadcrumb-->
@@ -42,24 +42,51 @@
 						<span class="card-icon">
 							<i class="flaticon2-box-1 text-primary icon-2x"></i>
 						</span>
-						<h3 class="card-label">Lista de producto</h3>
+						<h3 class="card-label">Registrar Venta</h3>
 					</div>
 					<div class="card-toolbar">
 						<div class="col align-self-end">
-							<a  class="btn btn-primary" th:href="@{/storer/getReport}">
-								Productos faltantes
+							<a class="btn btn-primary" th:href="@{/storer/getReportSale}">
+								Ventas del día
 							</a>
 						</div>
 					</div>
 				</div>
 				<div class="card-body">
+					<div class="my-12">
+						<div class="d-flex flex-row-reverse">
+							<button class="btn btn-success"> Registrar Venta</button>
+						</div>
+						<table id="tableDataSale"
+							class="table table-bordered table-hover table-checkable dataTable no-footer dtr-inline"
+							style="margin-top: 13px !important; width:100%; table-layout: fixed" role="grid">
+							<thead>
+								<tr>
+									<th>Descripción</th>
+									<th>Precio</th>
+									<th>Cantidad</th>
+									<th>Precio final</th>
+									<th>Unidad</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+							<tfoot>
+								<tr>
+									<th colspan="4" style="text-align:right">Total:</th>
+									<th></th>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
 					<div>
 						<table id="tableDataProducts"
 							class="table table-bordered table-hover table-checkable dataTable no-footer dtr-inline"
 							style="margin-top: 13px !important; width:100%; table-layout: fixed" role="grid">
 							<thead>
 								<tr>
-									<th style="width: 5%">Clave</th>
+									<th style="width: 20%">Clave</th>
 									<th>Descripción</th>
 									<th>Precio</th>
 									<th>Ganancia (%)</th>

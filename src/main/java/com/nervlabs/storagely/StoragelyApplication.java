@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StoragelyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StoragelyApplication.class, args);
+		SpringApplication.run(StoragelyApplication.class, args);    
 	}
-	
-	
 
 }
